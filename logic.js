@@ -12,3 +12,18 @@ var settings = {
 $.ajax(settings).done(function (response) {
 	console.log(response);
 });
+
+var settings2 = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://apidojo-kayak-v1.p.rapidapi.com/cars/create-session?origincitycode=6126&originairportcode=SGN&pickupdate=2020-01-01&pickuphour=16&dropoffdate=2020-01-03&dropoffhour=6&currency=USD",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "apidojo-kayak-v1.p.rapidapi.com",
+		"x-rapidapi-key": "4eb47b353emshb1dde063c97b955p15ac25jsn48408650620d"
+	}
+}
+
+$.ajax(settings2).done(function (response) {
+	console.log(response);
+});
