@@ -7,7 +7,17 @@ $(document).ready(function(){
       
 
 var cityinput = "Chicago";
+// rapid api keys
+// "x-rapidapi-key": "517cfaf70bmshf561bc8c9eb73e6p19dbb4jsn62aee8ad1606"
+// "x-rapidapi-key": "4eb47b353emshb1dde063c97b955p15ac25jsn48408650620d"
 
+var cityinput = "Chicago";
+// $(".submit-city").on("click", function (event) {
+//     event.preventDefault();
+//     var cityInput = $("#city").val().trim();
+//     console.log(cityInput)
+//     $("#city").val("");
+// });
 var settings = {
 	"async": true,
 	"crossDomain": true,
@@ -34,7 +44,7 @@ $.ajax(settings).done(function (response) {
 		"method": "GET",
 		"headers": {
 			"x-rapidapi-host": "apidojo-booking-v1.p.rapidapi.com",
-			"x-rapidapi-key": "4eb47b353emshb1dde063c97b955p15ac25jsn48408650620d"
+			"x-rapidapi-key": "003d34814cmsh8eb07577db7a1acp13773ejsn7347d271e32b"
 		}
 	}
 
@@ -51,7 +61,7 @@ $.ajax(settings).done(function (response) {
 			"method": "GET",
 			"headers": {
 				"x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
-				"x-rapidapi-key": "517cfaf70bmshf561bc8c9eb73e6p19dbb4jsn62aee8ad1606"
+				"x-rapidapi-key": "003d34814cmsh8eb07577db7a1acp13773ejsn7347d271e32b"
 			}
 		}
 
@@ -73,7 +83,7 @@ $.ajax(settings).done(function (response) {
 					"method": "GET",
 					"headers": {
 						"x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
-						"x-rapidapi-key": "517cfaf70bmshf561bc8c9eb73e6p19dbb4jsn62aee8ad1606"
+						"x-rapidapi-key": "003d34814cmsh8eb07577db7a1acp13773ejsn7347d271e32b"
 					}
 				}
 
@@ -99,7 +109,7 @@ $.ajax(settings).done(function (response) {
 				"method": "GET",
 				"headers": {
 					"x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
-					"x-rapidapi-key": "517cfaf70bmshf561bc8c9eb73e6p19dbb4jsn62aee8ad1606"
+					"x-rapidapi-key": "003d34814cmsh8eb07577db7a1acp13773ejsn7347d271e32b"
 				}
 			}
 
@@ -112,5 +122,3 @@ $.ajax(settings).done(function (response) {
 		);
 	});
 });
-
-
