@@ -1,3 +1,11 @@
+//003d34814cmsh8eb07577db7a1acp13773ejsn7347d271e32b
+
+
+$(document).ready(function(){
+    $('.carousel').carousel();
+  });
+      
+
 var cityinput = "Chicago";
 
 var settings = {
