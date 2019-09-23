@@ -25,7 +25,7 @@ var settings = {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "apidojo-booking-v1.p.rapidapi.com",
-		"x-rapidapi-key": "4eb47b353emshb1dde063c97b955p15ac25jsn48408650620d"
+		"x-rapidapi-key": "003d34814cmsh8eb07577db7a1acp13773ejsn7347d271e32b"
 	}
 }
 
@@ -121,4 +121,19 @@ $.ajax(settings).done(function (response) {
 		}
 		);
 	});
+});
+
+// NEW IMGUR 
+var settings3 = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://api.imgur.com/3/gallery/search/?q_all=" + cityinput,
+	"method": "GET",
+	"headers": {
+		"authorization": "Client-ID 53b448fc2ff06e6"
+	}
+}
+
+$.ajax(settings3).done(function (response) {
+	console.log(response);
 });
