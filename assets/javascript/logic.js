@@ -1,5 +1,12 @@
-var cityinput = "Chicago";
+// var cityinput = "Chicago";
+$(".submit-city").on("click", function (event) {
+    event.preventDefault();
+    var cityInput = $("#city").val().trim();
+    console.log(cityInput)
 
+    $("#city").val("");
+
+});
 var settings = {
 	"async": true,
 	"crossDomain": true,
@@ -104,5 +111,3 @@ $.ajax(settings).done(function (response) {
 		);
 	});
 });
-
-
