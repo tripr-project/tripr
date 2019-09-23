@@ -106,3 +106,17 @@ $.ajax(settings).done(function (response) {
 });
 
 
+// NEW IMGUR 
+var settings3 = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://api.imgur.com/3/gallery/search/?q_all=" + cityinput,
+	"method": "GET",
+	"headers": {
+		"authorization": "Client-ID 53b448fc2ff06e6"
+	}
+}
+
+$.ajax(settings3).done(function (response) {
+	console.log(response);
+});
