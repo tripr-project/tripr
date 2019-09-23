@@ -1,66 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">e
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link rel="stylesheet"  href="style.css">
-    
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-      
-    <!-- JQuery Link-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    
-    <title>Tripr</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <!-- JQuery Link-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <title>Tripr</title>
 
 
 </head>
+
 <body>
-    <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#!">one</a></li>
-        <li><a href="#!">two</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">three</a></li>
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">three</a></li>
+  </ul>
+  <nav>
+    <div class="nav-wrapper">
+    <a href="#!" class="brand-logo" id="logo">Tripr</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html">About Us</a></li>
+        <li><a href="badges.html"></a></li>
+
       </ul>
-      <nav>
-        <div class="nav-wrapper">
-         <center><a href="#!" class="brand-logo" id="logo">Tripr</a></center>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="sass.html">About Us</a></li>
-            <li><a href="badges.html"></a></li>
+    </div>
+  </nav>
 
-        
-            
-          
-          </ul>
-        </div>
-      </nav>
-              
   </div>
-</nav>
+  </nav>
+
+  <h1>Welcome to Tripr!</h1>
+
+  <h6>Here at Tripr, we want to make your travel experience as easy as possible. </h6>
+  <!-- <div class="content-body">
+  snehal work here -->
 
 
-       
-<h1>Welcome to Tripr!</h1>
+  <div class="row">
 
-<h6>Here at Tripr, we want to make your travel experience as easy as possible. </h6>
+    <form class="col s1.5">
+      <div class="row">
+        <h6>PickUp Date:</h6>
+        <input type="date" class="datepicker">
+        <div class="row">
 
-<!-- we need a city form !-->
+          <h6>DropOff Date:</h6>
+          <input type="date" class="datepicker">
+          <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>City</a>
+          <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="#!">Chicago</a></li>
+            <li><a href="#!">Schaumburg</a></li>
+          </ul>
+
+          <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Car Type</a>
+          <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="#!">one</a></li>
+            <li><a href="#!">two</a></li>
+          </ul>
+
+        </div>
 
 
-<div class="content-body">
-  <!-- snehal work here -->
-</div>
+    </form>
+
+  </div>
+  </div>
+  <div>
+    <!--hotel suggestions slide bar goes here-->
+  </div>
+
+  <div>
+    <!--footer goes here-->
 
 
-<div class="hotel-display">
+    <!-- we need a city form !-->
 
-</div>
 
 <div class="car-request">
 <!-- we will need an input form for the car travel information here -->
@@ -68,11 +96,30 @@
 <!-- https://rapidapi.com/apidojo/api/kajak?endpoint=5c186977e4b09c6b17cfaf50 -->
 <!-- link for required parameters for inputs -->
 </div> 
+    <h6>Here at Tripr, we want to make your travel experience as easy as possible.<br>
+      Please take a look through our site and find amazing matches. </h6>
 
-<div class="car-pickup">
-  <!-- display results here -->
-</div>
+    <div class="content-body">
+      <!-- snehal work here -->
 
-<script src="logic.js"></script> 
+    </div>
+
+
+    <div class="hotel-display">
+      <!-- display results here -->
+    </div>
+
+    <div class="restaurant-display">
+<!-- display results here - table??? -->
+<!-- restaurant phone number, address, cuisines, etc... -->
+    </div>
+
+    <script src="assets/javascript/logic.js"></script>
+      <!-- display results here -->
+    </div>
+
+    <script src="assets/javascript/logic.js"></script>
+
 </body>
+
 </html>
