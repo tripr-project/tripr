@@ -33,39 +33,45 @@ $.ajax(settings).done(function (response) {
 
 	$.ajax(settings2).done(function (response) {
 		console.log(response.result[0]);
-		$(".hotel-display").append(response.result[0].hotel_name)
-	});
-	
+		$(".hotel-display").append(response.result[0].hotel_name);
 
+		// searches for restaurant IDs given the lon/lat from city input
+		var ids = {
+			"async": true,
+			"crossDomain": true,
+			"url": "https://us-restaurant-menus.p.rapidapi.com/restaurants/search/ids?distance=5&page=1&lat=" + response.result[0].latitude + "&lon=" + response.result[0].longitude,
+			"method": "GET",
+			"headers": {
+				"x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
+				"x-rapidapi-key": "517cfaf70bmshf561bc8c9eb73e6p19dbb4jsn62aee8ad1606"
+			}
+		}
+
+		$.ajax(ids).done(function (response) {
+			// restaurant_ids are provided in an object. required to search for restaurants around the location
+			console.log(response.result.data.restaurant_ids);
+
+			var restaurants = {
+				"async": true,
+				"crossDomain": true,
+				// replace restaurant ID at end of URL with restaurant ID. for loop to cycle through the array of restaurants?
+				"url": "https://us-restaurant-menus.p.rapidapi.com/restaurant/134949",
+				// response.result.data.restaurant_ids
+				"method": "GET",
+				"headers": {
+					"x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
+					"x-rapidapi-key": "517cfaf70bmshf561bc8c9eb73e6p19dbb4jsn62aee8ad1606"
+				}
+			}
+
+			$.ajax(restaurants).done(function (response) {
+				console.log("restaurant name: " + response.result.restaurant_name);
+				$(".restaurant-display").append(response.result.restaurant_name);
+
+			});
+		}
+		);
+	});
 });
 
 
-
-
-
-// var settings2 = {
-// 	"async": true,
-// 	"crossDomain": true,
-// 	"url": "https://apidojo-kayak-v1.p.rapidapi.com/cars/create-session?origincitycode=" + cityCode + "&originairportcode=SGN&pickupdate=2018-12-20&pickuphour=16&dropoffdate=2018-12-21&dropoffhour=6&currency=USD",
-// 	// "url": "https://apidojo-kayak-v1.p.rapidapi.com/cars/create-session?origincitycode=" + cityCode + "&originairportcode=" + airportCode + "&pickupdate=" + pickupDate + "&pickuphour=" + pickupHour + "&dropoffdate=" + dropoffDate + "&dropoffhour=" + dropoffHour + "&currency=" + currency,
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-host": "apidojo-kayak-v1.p.rapidapi.com",
-// 		"x-rapidapi-key": "4eb47b353emshb1dde063c97b955p15ac25jsn48408650620d"
-// 	}
-// }
-
-// // grab inputs from html
-// var inputs = {
-// 	cityCode: 6126
-// // 	airportCode:
-// // 	pickupDate: 
-// // 	pickupHour: 
-// // 	dropoffDate: 
-// // 	dropoffHour: 
-// // 	currency: 
-// }
-
-// $.ajax(settings2).done(function (response) {
-// 	console.log(response);
-// });
