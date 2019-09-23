@@ -51,6 +51,7 @@ $.ajax(settings).done(function (response) {
 			// restaurant_ids are provided in an object. required to search for restaurants around the location
 			console.log(response.result.data.restaurant_ids);
 
+<<<<<<< HEAD
 			// for (var i = 0; i < response.result.data.restaurant_ids.length; i++){
 			for (var i = 0; i < 5; i++) {
 
@@ -84,6 +85,26 @@ $.ajax(settings).done(function (response) {
 				});
 			}
 			// push responses into a table 
+=======
+			var restaurants = {
+				"async": true,
+				"crossDomain": true,
+				// replace restaurant ID at end of URL with restaurant ID. for loop to cycle through the array of restaurants?
+				"url": "https://us-restaurant-menus.p.rapidapi.com/restaurant/134949",
+				// response.result.data.restaurant_ids
+				"method": "GET",
+				"headers": {
+					"x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
+					"x-rapidapi-key": "517cfaf70bmshf561bc8c9eb73e6p19dbb4jsn62aee8ad1606"
+				}
+			}
+
+			$.ajax(restaurants).done(function (response) {
+				console.log("restaurant name: " + response.result.restaurant_name);
+				$(".restaurant-display").append(response.result.restaurant_name);
+
+			});
+>>>>>>> d8d88f6d936ff9585badab4d4b1f69bce2dee35c
 		}
 		);
 	});
