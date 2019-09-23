@@ -31,7 +31,9 @@
   </ul>
   <nav>
     <div class="nav-wrapper">
-    <a href="#!" class="brand-logo" id="logo">Tripr</a>
+
+    <a href="#" class="brand-logo" id="logo">Tripr</a>
+
       <ul class="right hide-on-med-and-down">
         <li><a href="sass.html"></a></li>
         <li><a href="badges.html"></a></li>
@@ -76,19 +78,22 @@
         <input type="date" class="datepicker">
         <div class="row">
 
-          <h6>DropOff Date:</h6>
-          <input type="date" class="datepicker">
-          <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>City</a>
-          <ul id='dropdown1' class='dropdown-content'>
-            <li><a href="#!">Chicago</a></li>
-            <li><a href="#!">Schaumburg</a></li>
-          </ul>
-
-          <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Car Type</a>
-          <ul id='dropdown1' class='dropdown-content'>
-            <li><a href="#!">one</a></li>
-            <li><a href="#!">two</a></li>
-          </ul>
+            <div class="input-field col s3">
+ <label for="city">City:</label>
+                <input id="city" type="text" class="validate">  
+            </div>
+            <div class="input-field col s3">
+              <label for="date">Pickup Date:</label>
+                             <input type="text" class="pickup">  
+                         </div>
+                         <div class="input-field col s3">
+                            <label for="date">Dropoff Date:</label>
+                                           <input type="text" class="dropoff">  
+                                       </div>
+            <div class="input-field col s3">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                </button>
+            </div>
 
         </div>
 
@@ -175,6 +180,15 @@
   <!--footer goes here-->
 
   <script src="assets/javascript/logic.js"></script>
+
+  <script>
+    var pickupDate = document.querySelector(".pickup");
+    M.Datepicker.init(pickupDate,{});
+
+    var dropoffDate = document.querySelector(".dropoff");
+    M.Datepicker.init(dropoffDate,{});
+
+  </script>
 
 
 </body>
