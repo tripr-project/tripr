@@ -11,14 +11,12 @@ $(document).ready(function(){
 var cityinput = "Chicago";
 
 
-var cityinput = "Chicago";
 // $(".submit-city").on("click", function (event) {
 //     event.preventDefault();
 //     var cityInput = $("#city").val().trim();
 //     console.log(cityInput)
 //     $("#city").val("");
 // });
-
 var settings = {
 	"async": true,
 	"crossDomain": true,
@@ -32,7 +30,6 @@ var settings = {
 
 
 var bookingcitycode = 0;
-var bookingcitycodestring = "0";
 
 $.ajax(settings).done(function (response) {
 	console.log(response[0]);
@@ -139,5 +136,5 @@ $.ajax(settings3).done(function (response) {
 	console.log(response);
 });
 
-
+// end doc ready close
 });
