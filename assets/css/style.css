@@ -24,3 +24,6 @@ body {
   main {
     flex: 1 0 auto;
   }
+  .row{
+      text-align: center;
+  }
