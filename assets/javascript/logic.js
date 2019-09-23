@@ -18,6 +18,7 @@ var cityinput = "Chicago";
 //     console.log(cityInput)
 //     $("#city").val("");
 // });
+
 var settings = {
 	"async": true,
 	"crossDomain": true,
