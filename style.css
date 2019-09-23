@@ -10,5 +10,17 @@ h6{
 .grey-text{
     text-align: center;
 }
+footer{
+    background-color: palevioletred
+}
 
  
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
