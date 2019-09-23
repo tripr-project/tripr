@@ -7,7 +7,7 @@ var settings = {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "apidojo-booking-v1.p.rapidapi.com",
-		"x-rapidapi-key": "4eb47b353emshb1dde063c97b955p15ac25jsn48408650620d"
+		"x-rapidapi-key": "003d34814cmsh8eb07577db7a1acp13773ejsn7347d271e32b"
 	}
 }
 
@@ -26,7 +26,7 @@ $.ajax(settings).done(function (response) {
 		"method": "GET",
 		"headers": {
 			"x-rapidapi-host": "apidojo-booking-v1.p.rapidapi.com",
-			"x-rapidapi-key": "4eb47b353emshb1dde063c97b955p15ac25jsn48408650620d"
+			"x-rapidapi-key": "003d34814cmsh8eb07577db7a1acp13773ejsn7347d271e32b"
 		}
 	}
 
@@ -43,7 +43,7 @@ $.ajax(settings).done(function (response) {
 			"method": "GET",
 			"headers": {
 				"x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
-				"x-rapidapi-key": "517cfaf70bmshf561bc8c9eb73e6p19dbb4jsn62aee8ad1606"
+				"x-rapidapi-key": "003d34814cmsh8eb07577db7a1acp13773ejsn7347d271e32b"
 			}
 		}
 
@@ -65,7 +65,7 @@ $.ajax(settings).done(function (response) {
 					"method": "GET",
 					"headers": {
 						"x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
-						"x-rapidapi-key": "517cfaf70bmshf561bc8c9eb73e6p19dbb4jsn62aee8ad1606"
+						"x-rapidapi-key": "003d34814cmsh8eb07577db7a1acp13773ejsn7347d271e32b"
 					}
 				}
 
@@ -91,7 +91,7 @@ $.ajax(settings).done(function (response) {
 				"method": "GET",
 				"headers": {
 					"x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
-					"x-rapidapi-key": "517cfaf70bmshf561bc8c9eb73e6p19dbb4jsn62aee8ad1606"
+					"x-rapidapi-key": "003d34814cmsh8eb07577db7a1acp13773ejsn7347d271e32b"
 				}
 			}
 
@@ -110,12 +110,10 @@ $.ajax(settings).done(function (response) {
 var settings3 = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https:imgur-apiv3.p.rapidapi.com/3/image/Chicago",
+	"url": "https://api.imgur.com/3/gallery/search/?q_all=" + cityinput,
 	"method": "GET",
 	"headers": {
-		"x-rapidapi-host": "apidojo-booking-v1.p.rapidapi.com",
-		"x-rapidapi-key": "08656075a8mshf285d559bde3ee6p166a56jsndcf3cac73506",
-		"authorization": "kempatkinson"
+		"authorization": "Client-ID 53b448fc2ff06e6"
 	}
 }
 
