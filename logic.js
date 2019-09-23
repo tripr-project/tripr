@@ -7,7 +7,7 @@ var settings = {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "apidojo-booking-v1.p.rapidapi.com",
-		"x-rapidapi-key": "4eb47b353emshb1dde063c97b955p15ac25jsn48408650620d"
+		"x-rapidapi-key": "08656075a8mshf285d559bde3ee6p166a56jsndcf3cac73506"
 	}
 }
 
@@ -26,7 +26,7 @@ $.ajax(settings).done(function (response) {
 		"method": "GET",
 		"headers": {
 			"x-rapidapi-host": "apidojo-booking-v1.p.rapidapi.com",
-			"x-rapidapi-key": "4eb47b353emshb1dde063c97b955p15ac25jsn48408650620d"
+			"x-rapidapi-key": "08656075a8mshf285d559bde3ee6p166a56jsndcf3cac73506"
 		}
 	}
 
@@ -35,37 +35,25 @@ $.ajax(settings).done(function (response) {
 		console.log(response.result[0]);
 		$(".hotel-display").append(response.result[0].hotel_name)
 	});
-	
+
 
 });
 
+// NEW IMGUR 
+var settings3 = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https:imgur-apiv3.p.rapidapi.com/3/image/Chicago",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "apidojo-booking-v1.p.rapidapi.com",
+		"x-rapidapi-key": "08656075a8mshf285d559bde3ee6p166a56jsndcf3cac73506",
+		"authorization": "kempatkinson"
+	}
+}
+
+$.ajax(settings3).done(function (response) {
+	console.log(response);
+});
 
 
-
-
-// var settings2 = {
-// 	"async": true,
-// 	"crossDomain": true,
-// 	"url": "https://apidojo-kayak-v1.p.rapidapi.com/cars/create-session?origincitycode=" + cityCode + "&originairportcode=SGN&pickupdate=2018-12-20&pickuphour=16&dropoffdate=2018-12-21&dropoffhour=6&currency=USD",
-// 	// "url": "https://apidojo-kayak-v1.p.rapidapi.com/cars/create-session?origincitycode=" + cityCode + "&originairportcode=" + airportCode + "&pickupdate=" + pickupDate + "&pickuphour=" + pickupHour + "&dropoffdate=" + dropoffDate + "&dropoffhour=" + dropoffHour + "&currency=" + currency,
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-host": "apidojo-kayak-v1.p.rapidapi.com",
-// 		"x-rapidapi-key": "4eb47b353emshb1dde063c97b955p15ac25jsn48408650620d"
-// 	}
-// }
-
-// // grab inputs from html
-// var inputs = {
-// 	cityCode: 6126
-// // 	airportCode:
-// // 	pickupDate: 
-// // 	pickupHour: 
-// // 	dropoffDate: 
-// // 	dropoffHour: 
-// // 	currency: 
-// }
-
-// $.ajax(settings2).done(function (response) {
-// 	console.log(response);
-// });
