@@ -51,11 +51,8 @@ $.ajax(settings).done(function (response) {
 			// restaurant_ids are provided in an object. required to search for restaurants around the location
 			console.log(response.result.data.restaurant_ids);
 
-<<<<<<< HEAD
 			// for (var i = 0; i < response.result.data.restaurant_ids.length; i++){
 			for (var i = 0; i < 5; i++) {
-
-
 				var loopId = response.result.data.restaurant_ids[i]
 				console.log(loopId)
 
@@ -85,7 +82,6 @@ $.ajax(settings).done(function (response) {
 				});
 			}
 			// push responses into a table 
-=======
 			var restaurants = {
 				"async": true,
 				"crossDomain": true,
@@ -104,7 +100,6 @@ $.ajax(settings).done(function (response) {
 				$(".restaurant-display").append(response.result.restaurant_name);
 
 			});
->>>>>>> d8d88f6d936ff9585badab4d4b1f69bce2dee35c
 		}
 		);
 	});
