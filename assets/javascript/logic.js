@@ -2,6 +2,8 @@
 // "x-rapidapi-key": "517cfaf70bmshf561bc8c9eb73e6p19dbb4jsn62aee8ad1606"
 // "x-rapidapi-key": "4eb47b353emshb1dde063c97b955p15ac25jsn48408650620d"
 //  003d34814cmsh8eb07577db7a1acp13773ejsn7347d271e32b
+// 11785c8b2cmsh47e75714bae08e2p11d46djsna87e52066cf6
+
 
 
 $(document).ready(function () {
@@ -52,7 +54,6 @@ $(document).ready(function () {
 			}
 		}
 		console.log(settings)
-
 
 		var bookingcitycode = 0;
 
@@ -124,6 +125,7 @@ $(document).ready(function () {
 								$("<td>").text(response.result.address.formatted),
 								);
 							$("#restaurant-table > tbody").append(newRow);
+
 							// grab more info - phone number, address, cuisines, etc...
 						});
 					}
