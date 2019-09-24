@@ -5,6 +5,7 @@
 // 11785c8b2cmsh47e75714bae08e2p11d46djsna87e52066cf6
 
 
+
 $(document).ready(function () {
 	var cityInput;
 	$(".submit-city").on("click", function (event) {
@@ -53,7 +54,6 @@ $(document).ready(function () {
 			}
 		}
 		console.log(settings)
-
 
 		var bookingcitycode = 0;
 
@@ -118,8 +118,14 @@ $(document).ready(function () {
 							console.log("restaurant name: " + response.result.cuisines);
 							console.log("restaurant name: " + response.result.restaurant_phone);
 
+							var newRow = $("<tr>").append(
+								$("<td>").text(response.result.restaurant_name),
+								$("<td>").text(response.result.restaurant_phone),
+								$("<td>").text(response.result.cuisines),
+								$("<td>").text(response.result.address.formatted),
+								);
+							$("#restaurant-table > tbody").append(newRow);
 
-							$(".restaurant-display").append(response.result.restaurant_name);
 							// grab more info - phone number, address, cuisines, etc...
 						});
 					}
@@ -153,3 +159,6 @@ $(document).ready(function () {
 
 	// end document ready
 });
+
+
+
