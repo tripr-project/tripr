@@ -10,7 +10,7 @@
 
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
+  gi
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
@@ -32,7 +32,7 @@
   <nav>
     <div class="nav-wrapper">
 
-    <a href="#" class="brand-logo" id="logo">Tripr</a>
+      <a href="#" class="brand-logo" id="logo">Tripr</a>
 
       <ul class="right hide-on-med-and-down">
         <li><a href="sass.html"></a></li>
@@ -55,23 +55,23 @@
   <div class="container">
 
 
-  <h1>Welcome to Tripr!</h1>
+    <h1>Welcome to Tripr!</h1>
 
-  <h6>Here at Tripr, we want to make your travel experience as easy as possible.<br>
-    Please take a look through our site and find amazing matches. </h6>
-  <!--  images of restaurants and cities -->
-  <div class="carousel" id="pictures">
+    <h6>Here at Tripr, we want to make your travel experience as easy as possible.<br>
+      Please take a look through our site and find amazing matches. </h6>
+    <!--  images of restaurants and cities -->
+    <div class="carousel" id="pictures">
 
-    <a class="carousel-item" href="#one!"><img
-        src="https://cdn.vox-cdn.com/thumbor/MvaCwyEYxLTa0GAgriwFRmqpx04=/0x0:780x582/1200x800/filters:focal(403x204:527x328)/cdn.vox-cdn.com/uploads/chorus_image/image/55747759/1240_vista_tower_skyline_night_courtesy_of_magellan_development_group.0.jpg"></a>
-  </div>
+      <a class="carousel-item" href="#one!"><img
+          src="https://cdn.vox-cdn.com/thumbor/MvaCwyEYxLTa0GAgriwFRmqpx04=/0x0:780x582/1200x800/filters:focal(403x204:527x328)/cdn.vox-cdn.com/uploads/chorus_image/image/55747759/1240_vista_tower_skyline_night_courtesy_of_magellan_development_group.0.jpg"></a>
+    </div>
 
 
-  <!-- <div class="content-body"> -->
-  <!-- snehal work here -->
+    <!-- <div class="content-body"> -->
+    <!-- snehal work here -->
 
-  <!-- start extra form -->
-  <!-- <form class="col s1.5">
+    <!-- start extra form -->
+    <!-- <form class="col s1.5">
       <div class="row">
         <h6>PickUp Date:</h6>
         <input type="date" class="datepicker">
@@ -98,25 +98,11 @@
 
 
     </form> -->
-  <!-- end extra form -->
+    <!-- end extra form -->
 
-  <div class="row">
-    <form class="col s6">
 
-      <div class="row">
-        <div class="input-field col s6">
-          <label for="city">City:</label>
-          <input id="city" type="text" class="validate">
-          <button class="btn waves-effect waves-light submit-city" type="submit" name="action">Submit
-          </button>
-        </div>
-
-      </div>
-    </form>
-  </div>
-
-  <!--hotel suggestions slide bar goes here-->
-  <!-- <div>
+    <!--hotel suggestions slide bar goes here-->
+    <!-- <div>
     please tell us what this does or is supposed to be
 
   </div> -->
@@ -124,42 +110,43 @@
 
 
 
-  <!-- <div class="car-request">
+    <!-- <div class="car-request">
     </div> -->
 
 
-  <!-- <div class="content-body">
+    <!-- <div class="content-body">
     
 
     </div> -->
 
-  <div class="restaurant-display center">
+    <div id="restaurant-display center">
       <div class="row">
-          <div class="col s12 m6">
-              <div class="card light-blue lighten-5">
-                <div class="card-content black-text">
-                  <span class="card-title">Card Title</span>
-                  <p>I am a very simple card. I am good at containing small bits of information.
-                  I am convenient because I require little markup to use effectively.</p>
-                </div>
-                <div class="card-action">
-                    <table class="table table-sm table-hover" id='restaurant-table'>
-                        <thead>
-                          <tr>
-                            <th scope="col">Restaurant Name</th>
-                            <th scope="col">Phone Number</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Cuisines</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                      </table>
-                </div>
-              </div>
+        <div class="col s12 m6">
+          <div class="card light-blue lighten-5">
+            <div class="card-content black-text">
+              <span class="card-title">Hotel Preview</span>
+              <!-- <p>I am a very simple card. I am good at containing small bits of information.
+                  I am convenient because I require little markup to use effectively.</p> -->
             </div>
-            <!-- replace this information with hotel information -->
-          <!-- <div class="col s12 m6">
+            <div class="card-action">
+              <table class="table table-sm table-hover" id='restaurant-table'>
+                <thead>
+                  <tr>
+                    <th scope="col">Restaurant Name</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Rating</th>
+                  </tr>
+                </thead>
+                <tbody class="hotelsbody">
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- replace this information with hotel information -->
+        <!-- <div class="col s12 m6">
             <div class="card light-blue lighten-5">
               <div class="card-content black-text">
                 <span class="card-title">Card Title</span>
@@ -182,9 +169,24 @@
               </div>
             </div>
           </div> -->
+      </div>
+    </div>
+
+
+    <div class="row">
+      <form class="col s6">
+        <div class="row">
+          <div class="input-field col s6">
+            <label for="city">City:</label>
+            <input id="city" type="text" class="validate">
+            <button class="btn waves-effect waves-light submit-city" type="submit" name="action">Submit
+            </button>
+          </div>
+
         </div>
-</div>
-</div>
+      </form>
+    </div>
+  </div>
 
 
   <!--footer goes here-->
