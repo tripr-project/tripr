@@ -2,6 +2,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-image:url(../images/restaurant.jpg)
   }
 h1{
     text-align: center;
@@ -29,6 +30,13 @@ main {
 #footer{
     text-align: center;
 }
+/* .nav-wrapper{
+    text-align: center;
+}
+.col{
+    text-align: center;
+    margin-left: 200px;
+} */
 
 .card{
     text-align: center;
