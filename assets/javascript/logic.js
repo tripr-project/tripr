@@ -2,7 +2,7 @@
 // "x-rapidapi-key": "517cfaf70bmshf561bc8c9eb73e6p19dbb4jsn62aee8ad1606"
 // "x-rapidapi-key": "4eb47b353emshb1dde063c97b955p15ac25jsn48408650620d"
 //  003d34814cmsh8eb07577db7a1acp13773ejsn7347d271e32b
-// 11785c8b2cmsh47e75714bae08e2p11d46djsna87e52066cf6
+
 
 
 
@@ -13,9 +13,16 @@ $(document).ready(function () {
 	
 
 	var cityInput;
-	$(".submit-city").on("click", function (event) {
+	$(".submit-button").on("click", function (event) {
 		event.preventDefault();
 		cityInput = $("#city").val().trim();
+		arrivalInput = $("#arrival").val().trim();
+		departureInput = $("#departure").val().trim();
+		guestsCount = $("#guests").val().trim();
+		roomsCount = $("#rooms").val().trim();
+		
+
+
 		console.log(cityInput)
 		$("#city").val("");
 		$(".carousel").show();
@@ -78,12 +85,27 @@ $(document).ready(function () {
 				}
 			}
 
-
 			$.ajax(settings2).done(function (response) {
 				console.log(response.result[0]);
 				$(".hotel-display").empty();
 				$(".hotel-display").append(response.result[0].hotel_name);
 
+				var dates = {
+					"async": true,
+					"crossDomain": true,
+					"url": "https://apidojo-booking-v1.p.rapidapi.com/filters/list?children_qty=4&languagecode=en-us&children_age=5%2C7%2C9%2C10&price_filter_currencycode=USD&categories_filter=price%3A%3A9-40%2Cfree_cancellation%3A%3A1%2Cclass%3A%3A1%2Cclass%3A%3A0%2Cclass%3A%3A2&arrival_date=2019-10-13&dest_ids=-3712125&departure_date=2019-10-15&guest_qty=1&room_qty=2&search_type=city",
+					// "url": "https://apidojo-booking-v1.p.rapidapi.com/filters/list?children_qty=0&languagecode=en-us&children_age=5%2C7&price_filter_currencycode=USD&categories_filter=price%3A%3A9-40%2Cfree_cancellation%3A%3A1%2Cclass%3A%3A1%2Cclass%3A%3A0%2Cclass%3A%3A2&arrival_date=" + arrivalInput + "&dest_ids" + bookingcitycode + "&departure_date=" + departureInput + "&guest_qty=" + guestsCount + "&room_qty=" + roomsCount + "&search_type=city",
+					"method": "GET",
+					"headers": {
+						"x-rapidapi-host": "apidojo-booking-v1.p.rapidapi.com",
+						"x-rapidapi-key": "517cfaf70bmshf561bc8c9eb73e6p19dbb4jsn62aee8ad1606"
+					}
+				}
+				
+				$.ajax(dates).done(function (response) {
+					console.log(response);
+				});
+				
 				// searches for restaurant IDs given the lon/lat from city input
 				var ids = {
 					"async": true,
@@ -136,37 +158,17 @@ $(document).ready(function () {
 							// grab more info - phone number, address, cuisines, etc...
 						});
 					}
-					// push responses into a table 
-					var restaurants = {
-						"async": true,
-						"crossDomain": true,
-						// replace restaurant ID at end of URL with restaurant ID. for loop to cycle through the array of restaurants?
-						"url": "https://us-restaurant-menus.p.rapidapi.com/restaurant/134949",
-						// response.result.data.restaurant_ids
-						"method": "GET",
-						"headers": {
-							"x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
-							"x-rapidapi-key": "11785c8b2cmsh47e75714bae08e2p11d46djsna87e52066cf6"
-						}
-					}
-
-					$.ajax(restaurants).done(function (response) {
-						console.log("restaurant name: " + response.result.restaurant_name);
-						$(".restaurant-display").append(response.result.restaurant_name);
-						// where is optimal place to put this? 
-						$(".restaurant-display").show();
-
 					});
 				}
 				);
 			});
 		});
+	// end document ready
+
 	});
 
 
 
-	// end document ready
-});
 
 
 
