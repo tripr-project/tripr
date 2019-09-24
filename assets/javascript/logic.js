@@ -114,86 +114,108 @@ $(document).ready(function () {
 
 
 		});
-		console.log(restlat + "," + restlong)
-		var ids = {
+
+		var bookingcitycode = 0;
+		var restlat = 0;
+		var restlong = 0;
+
+		var settingsagain = {
 			"async": true,
 			"crossDomain": true,
-			"url": "https://us-restaurant-menus.p.rapidapi.com/restaurants/search/ids?distance=5&page=1&lat=" + restlat + "&lon=" + restlong,
+			"url": "https://apidojo-booking-v1.p.rapidapi.com/locations/auto-complete?languagecode=en-us&text=" + cityInput,
 			"method": "GET",
 			"headers": {
-				"x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
-				"x-rapidapi-key": "4eb47b353emshb1dde063c97b955p15ac25jsn48408650620d"
+				"x-rapidapi-host": "apidojo-booking-v1.p.rapidapi.com",
+				"x-rapidapi-key": "11785c8b2cmsh47e75714bae08e2p11d46djsna87e52066cf6"
 			}
 		}
+		$.ajax(settingsagain).done(function (response) {
+			console.log(response[0]);
+			bookingcitycode = response[0].dest_id;
+			restlat = response[0].latitude;
+			restlong = response[0].longitude;
+			console.log(restlat + "," + restlong)
 
-		$.ajax(ids).done(function (response) {
-			// restaurant_ids are provided in an object. required to search for restaurants around the location
-			console.log(response);
-			$(".resturantsbody").empty();
-			for (var i = 0; i < 5; i++) {
-				var loopId = response.result.data.restaurant_ids[i]
-				console.log(loopId)
 
-				var restaurants = {
-					"async": true,
-					"crossDomain": true,
-					// replace restaurant ID at end of URL with restaurant ID. for loop to cycle through the array of restaurants?
-					"url": "https://us-restaurant-menus.p.rapidapi.com/restaurant/" + loopId,
-					// response.result.data.restaurant_ids
-					"method": "GET",
-					"headers": {
-						"x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
-						"x-rapidapi-key": "4eb47b353emshb1dde063c97b955p15ac25jsn48408650620d"
-					}
+			var ids = {
+				"async": true,
+				"crossDomain": true,
+				"url": "https://us-restaurant-menus.p.rapidapi.com/restaurants/search/ids?distance=5&page=1&lat=" + restlat + "&lon=" + restlong,
+				"method": "GET",
+				"headers": {
+					"x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
+					"x-rapidapi-key": "4eb47b353emshb1dde063c97b955p15ac25jsn48408650620d"
 				}
+			}
 
-				$.ajax(restaurants).done(function (response) {
+			$.ajax(ids).done(function (response) {
+				// restaurant_ids are provided in an object. required to search for restaurants around the location
+				console.log(response);
+				$(".resturantsbody").empty();
+				for (var i = 0; i < 5; i++) {
+					var loopId = response.result.data.restaurant_ids[i]
+					console.log(loopId)
 
-					// console.log(response.result)
-					console.log("restaurant name: " + response.result.restaurant_name);
-					console.log("restaurant name: " + response.result.address.formatted);
-					console.log("restaurant name: " + response.result.cuisines);
-					console.log("restaurant name: " + response.result.restaurant_phone);
+					var restaurants = {
+						"async": true,
+						"crossDomain": true,
+						// replace restaurant ID at end of URL with restaurant ID. for loop to cycle through the array of restaurants?
+						"url": "https://us-restaurant-menus.p.rapidapi.com/restaurant/" + loopId,
+						// response.result.data.restaurant_ids
+						"method": "GET",
+						"headers": {
+							"x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
+							"x-rapidapi-key": "4eb47b353emshb1dde063c97b955p15ac25jsn48408650620d"
+						}
+					}
 
-					var newRow = $("<tr>").append(
-						$("<td>").text(response.result.restaurant_name),
-						$("<td>").text(response.result.restaurant_phone),
-						$("<td>").text(response.result.cuisines),
-						$("<td>").text(response.result.address.formatted),
-					);
-					$(".resturantsbody").append(newRow);
+					$.ajax(restaurants).done(function (response) {
 
-					// grab more info - phone number, address, cuisines, etc...
-				});
-				// }
-				// // push responses into a table 
-				// var restaurants = {
-				// 	"async": true,
-				// 	"crossDomain": true,
-				// 	// replace restaurant ID at end of URL with restaurant ID. for loop to cycle through the array of restaurants?
-				// 	"url": "https://us-restaurant-menus.p.rapidapi.com/restaurant/134949",
-				// 	// response.result.data.restaurant_ids
-				// 	"method": "GET",
-				// 	"headers": {
-				// 		"x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
-				// 		"x-rapidapi-key": "11785c8b2cmsh47e75714bae08e2p11d46djsna87e52066cf6"
-				// 	}
-				// }
+						// console.log(response.result)
+						console.log("restaurant name: " + response.result.restaurant_name);
+						console.log("restaurant name: " + response.result.address.formatted);
+						console.log("restaurant name: " + response.result.cuisines);
+						console.log("restaurant name: " + response.result.restaurant_phone);
 
-				// $.ajax(restaurants).done(function (response) {
-				// 	console.log("restaurant name: " + response.result.restaurant_name);
-				// 	$(".restaurant-display").append(response.result.restaurant_name);
-				// 	// where is optimal place to put this? 
-				// 	$(".restaurant-display").show();
+						var newRow = $("<tr>").append(
+							$("<td>").text(response.result.restaurant_name),
+							$("<td>").text(response.result.restaurant_phone),
+							$("<td>").text(response.result.cuisines),
+							$("<td>").text(response.result.address.formatted),
+						);
+						$(".resturantsbody").append(newRow);
 
-			};
+						// grab more info - phone number, address, cuisines, etc...
+					});
+					// }
+					// // push responses into a table 
+					// var restaurants = {
+					// 	"async": true,
+					// 	"crossDomain": true,
+					// 	// replace restaurant ID at end of URL with restaurant ID. for loop to cycle through the array of restaurants?
+					// 	"url": "https://us-restaurant-menus.p.rapidapi.com/restaurant/134949",
+					// 	// response.result.data.restaurant_ids
+					// 	"method": "GET",
+					// 	"headers": {
+					// 		"x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
+					// 		"x-rapidapi-key": "11785c8b2cmsh47e75714bae08e2p11d46djsna87e52066cf6"
+					// 	}
+					// }
+
+					// $.ajax(restaurants).done(function (response) {
+					// 	console.log("restaurant name: " + response.result.restaurant_name);
+					// 	$(".restaurant-display").append(response.result.restaurant_name);
+					// 	// where is optimal place to put this? 
+					// 	$(".restaurant-display").show();
+
+				};
+			});
+
+
+
+			// end document ready
 		});
 
-
-
-		// end document ready
 	});
 
 });
-
-
