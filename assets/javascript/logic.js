@@ -9,6 +9,8 @@
 $(document).ready(function () {
 	$(".carousel").hide();
 	$(".card").hide();
+	$("#preview").hide();
+	$("#changecity").hide();
 
 	
 
@@ -20,7 +22,9 @@ $(document).ready(function () {
 		$("#city").val("");
 		$(".carousel").show();
 		$(".card").show();
-
+		$("#preview").show();
+		$("#destination").text(cityInput);
+		$("#changecity").show();
 
 		var slider = $('.carousel');
 		slider.carousel();
