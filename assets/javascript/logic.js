@@ -14,7 +14,6 @@ $(document).ready(function () {
 		console.log(cityInput)
 		$("#city").val("");
 
-
 		var slider = $('.carousel');
 		slider.carousel();
 
@@ -75,6 +74,7 @@ $(document).ready(function () {
 
 			$.ajax(settings2).done(function (response) {
 				console.log(response.result[0]);
+				$(".hotel-display").empty();
 				$(".hotel-display").append(response.result[0].hotel_name);
 
 				// searches for restaurant IDs given the lon/lat from city input
