@@ -7,12 +7,19 @@
 
 
 $(document).ready(function () {
+	$(".carousel").hide();
+	$(".restaurant-display").hide();
+
+	
+
 	var cityInput;
 	$(".submit-city").on("click", function (event) {
 		event.preventDefault();
 		cityInput = $("#city").val().trim();
 		console.log(cityInput)
 		$("#city").val("");
+		$(".carousel").show();
+
 
 
 		var slider = $('.carousel');
@@ -123,7 +130,7 @@ $(document).ready(function () {
 								$("<td>").text(response.result.restaurant_phone),
 								$("<td>").text(response.result.cuisines),
 								$("<td>").text(response.result.address.formatted),
-								);
+							);
 							$("#restaurant-table > tbody").append(newRow);
 
 							// grab more info - phone number, address, cuisines, etc...
@@ -146,6 +153,8 @@ $(document).ready(function () {
 					$.ajax(restaurants).done(function (response) {
 						console.log("restaurant name: " + response.result.restaurant_name);
 						$(".restaurant-display").append(response.result.restaurant_name);
+						// where is optimal place to put this? 
+						$(".restaurant-display").show();
 
 					});
 				}
@@ -154,7 +163,6 @@ $(document).ready(function () {
 		});
 	});
 
-	// NEW IMGUR 
 
 
 	// end document ready
