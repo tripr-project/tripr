@@ -57,9 +57,11 @@
 
   <h1>Welcome to Tripr!</h1>
 
-  <h6>Here at Tripr, we want to make your travel experience as easy as possible. </h6>
+  <h6>Here at Tripr, we want to make your travel experience as easy as possible.<br>
+    Please take a look through our site and find amazing matches. </h6>
   <!--  images of restaurants and cities -->
-  <div class="carousel" id=pictures>
+  <div class="carousel" id="pictures">
+
     <a class="carousel-item" href="#one!"><img
         src="https://cdn.vox-cdn.com/thumbor/MvaCwyEYxLTa0GAgriwFRmqpx04=/0x0:780x582/1200x800/filters:focal(403x204:527x328)/cdn.vox-cdn.com/uploads/chorus_image/image/55747759/1240_vista_tower_skyline_night_courtesy_of_magellan_development_group.0.jpg"></a>
   </div>
@@ -97,23 +99,18 @@
 
     </form> -->
   <!-- end extra form -->
-  <div class="hotel-display">
-      <!-- hotel results here -->
-  
-  </div>
 
   <div class="row">
-    <form class="col s12">
+    <form class="col s6">
 
       <div class="row">
         <div class="input-field col s6">
           <label for="city">City:</label>
           <input id="city" type="text" class="validate">
-        </div>
-        <div class="input-field col s6">
           <button class="btn waves-effect waves-light submit-city" type="submit" name="action">Submit
           </button>
         </div>
+
       </div>
     </form>
   </div>
@@ -129,8 +126,7 @@
 
   <!-- <div class="car-request">
     </div> -->
-  <h6>Here at Tripr, we want to make your travel experience as easy as possible.<br>
-    Please take a look through our site and find amazing matches. </h6>
+
 
   <!-- <div class="content-body">
     
@@ -140,6 +136,30 @@
   <div class="restaurant-display center">
       <div class="row">
           <div class="col s12 m6">
+              <div class="card light-blue lighten-5">
+                <div class="card-content black-text">
+                  <span class="card-title">Card Title</span>
+                  <p>I am a very simple card. I am good at containing small bits of information.
+                  I am convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                    <table class="table table-sm table-hover" id='restaurant-table'>
+                        <thead>
+                          <tr>
+                            <th scope="col">Restaurant Name</th>
+                            <th scope="col">Phone Number</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Cuisines</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>
+                </div>
+              </div>
+            </div>
+            <!-- replace this information with hotel information -->
+          <!-- <div class="col s12 m6">
             <div class="card light-blue lighten-5">
               <div class="card-content black-text">
                 <span class="card-title">Card Title</span>
@@ -161,16 +181,12 @@
                     </table>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
-
-
-  <div class="restaurant-display">
-    <!-- restaurant results here -->
-    <!-- display results here - table??? -->
-    <!-- restaurant phone number, address, cuisines, etc... -->
-  </div>
 </div>
+</div>
+
+
   <!--footer goes here-->
   <footer class="page-footer">
     <div class="container">
