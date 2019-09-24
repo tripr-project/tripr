@@ -2,15 +2,16 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-image:url(../images/restaurant.jpg)
   }
-h1{
+h1, h2, h6{
     text-align: center;
     font-family: 'Roboto Mono', monospace;
 }
-h6 {
+/* h6 {
     text-align: center;
     font-family: 'Roboto Mono', monospace;
-}
+} */
 .section-search input {
     padding: 5px !important;
     font-size: 18px !important;
@@ -29,8 +30,15 @@ main {
 #footer{
     text-align: center;
 }
+/* .nav-wrapper{
+    text-align: center;
+}
+.col{
+    text-align: center;
+    margin-left: 200px;
+} */
 
-.hotel-display {
+.card{
     text-align: center;
 }
 
