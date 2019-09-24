@@ -8,7 +8,15 @@
 
 $(document).ready(function () {
 	$(".carousel").hide();
+<<<<<<< Updated upstream
 	$(".restaurant-display").hide();
+=======
+	$(".card").hide();
+	$("#preview").hide();
+	$("#changecity").hide();
+    $(".sidenav").sidenav();
+
+>>>>>>> Stashed changes
 
 	
 
@@ -18,13 +26,18 @@ $(document).ready(function () {
 		cityInput = $("#city").val().trim();
 		arrivalInput = $("#arrival").val().trim();
 		departureInput = $("#departure").val().trim();
+<<<<<<< Updated upstream
 		guestsCount = $("#guests").val().trim();
 		roomsCount = $("#rooms").val().trim();
 		
 
+=======
+>>>>>>> Stashed changes
 
 		console.log(cityInput)
 		$("#city").val("");
+		$("#arrival").val("");
+		$("#departure").val("");
 		$(".carousel").show();
 
 
@@ -73,19 +86,25 @@ $(document).ready(function () {
 		$.ajax(settings).done(function (response) {
 			console.log(response[0]);
 			bookingcitycode = response[0].dest_id;
+<<<<<<< Updated upstream
+=======
+			restlat = response[0].latitude;
+			restlong = response[0].longitude;
+			console.log(restlat + "," + restlong)
+>>>>>>> Stashed changes
 
 			var settings2 = {
 				"async": true,
 				"crossDomain": true,
-				"url": "https://apidojo-booking-v1.p.rapidapi.com/properties/list?price_filter_currencycode=USD&travel_purpose=leisure&categories_filter=price%3A%3A9-40%2Cfree_cancellation%3A%3A1%2Cclass%3A%3A1%2Cclass%3A%3A0%2Cclass%3A%3A2&search_id=none&order_by=popularity&children_qty=2&languagecode=en-us&children_age=5%2C7&search_type=city&offset=0&dest_ids=" + bookingcitycode + "&guest_qty=1&arrival_date=2020-01-01&departure_date=2020-01-03&room_qty=1",
+				"url": "https://apidojo-booking-v1.p.rapidapi.com/properties/list?price_filter_currencycode=USD&travel_purpose=leisure&categories_filter=price%3A%3A9-40%2Cfree_cancellation%3A%3A1%2Cclass%3A%3A1%2Cclass%3A%3A0%2Cclass%3A%3A2&search_id=none&order_by=popularity&children_qty=2&languagecode=en-us&children_age=5%2C7&search_type=city&offset=0&dest_ids=" + bookingcitycode + "&guest_qty=1&arrival_date=" + arrivalInput + "&departure_date=" + departureInput + "&room_qty=1",
 				"method": "GET",
 				"headers": {
 					"x-rapidapi-host": "apidojo-booking-v1.p.rapidapi.com",
 					"x-rapidapi-key": "11785c8b2cmsh47e75714bae08e2p11d46djsna87e52066cf6"
 				}
 			}
-
 			$.ajax(settings2).done(function (response) {
+<<<<<<< Updated upstream
 				console.log(response.result[0]);
 				$(".hotel-display").empty();
 				$(".hotel-display").append(response.result[0].hotel_name);
@@ -116,8 +135,64 @@ $(document).ready(function () {
 						"x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
 						"x-rapidapi-key": "11785c8b2cmsh47e75714bae08e2p11d46djsna87e52066cf6"
 					}
+=======
+				$(".hotelsbody").empty()
+				console.log(response);
+				for (var i = 0; i < 6; i++) {
+					if (i == 2) {
+						console.log("skip")
+					} else {
+						var newRow = $("<tr>").append(
+							$("<td>").text(response.result[i].hotel_name),
+							console.log(response.result[i].hotel_name),
+							$("<td>").text(response.result[i].min_total_price),
+							console.log(response.result[i].min_total_price),
+							$("<td>").text(response.result[i].review_score),
+							console.log(response.result[i].review_score),
+							$("<td>").text(response.result[i].address),
+							console.log(response.result[i].address),
+						);
+						$(".hotelsbody").append(newRow);
+					}
+				}
+			});
+		});
+
+		var bookingcitycode = 0;
+		var restlat = 0;
+		var restlong = 0;
+
+		var settingsAgain = {
+			"async": true,
+			"crossDomain": true,
+			"url": "https://apidojo-booking-v1.p.rapidapi.com/locations/auto-complete?languagecode=en-us&text=" + cityInput,
+			"method": "GET",
+			"headers": {
+				"x-rapidapi-host": "apidojo-booking-v1.p.rapidapi.com",
+				"x-rapidapi-key": "11785c8b2cmsh47e75714bae08e2p11d46djsna87e52066cf6"
+			}
+		}
+		// repeat ajax call - previously getting error from too many child functions
+		$.ajax(settingsAgain).done(function (response) {
+			console.log(response[0]);
+			bookingcitycode = response[0].dest_id;
+			restlat = response[0].latitude;
+			restlong = response[0].longitude;
+			console.log(restlat + "," + restlong)
+
+
+			var ids = {
+				"async": true,
+				"crossDomain": true,
+				"url": "https://us-restaurant-menus.p.rapidapi.com/restaurants/search/ids?distance=5&page=1&lat=" + restlat + "&lon=" + restlong,
+				"method": "GET",
+				"headers": {
+					"x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
+					"x-rapidapi-key": "4eb47b353emshb1dde063c97b955p15ac25jsn48408650620d"
+>>>>>>> Stashed changes
 				}
 
+<<<<<<< Updated upstream
 				$.ajax(ids).done(function (response) {
 					// restaurant_ids are provided in an object. required to search for restaurants around the location
 					console.log(response.result.data.restaurant_ids);
@@ -172,3 +247,43 @@ $(document).ready(function () {
 
 
 
+=======
+			$.ajax(ids).done(function (response) {
+				console.log(response);
+				$(".resturantsbody").empty();
+				for (var i = 0; i < 5; i++) {
+					var loopId = response.result.data.restaurant_ids[i]
+					console.log(loopId)
+
+					var restaurants = {
+						"async": true,
+						"crossDomain": true,
+						"url": "https://us-restaurant-menus.p.rapidapi.com/restaurant/" + loopId,
+						"method": "GET",
+						"headers": {
+							"x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
+							"x-rapidapi-key": "4eb47b353emshb1dde063c97b955p15ac25jsn48408650620d"
+						}
+					}
+
+					$.ajax(restaurants).done(function (response) {
+						console.log("restaurant name: " + response.result.restaurant_name);
+						console.log("restaurant name: " + response.result.address.formatted);
+						console.log("restaurant name: " + response.result.cuisines);
+						console.log("restaurant name: " + response.result.restaurant_phone);
+
+						var newRow = $("<tr>").append(
+							$("<td>").text(response.result.restaurant_name),
+							$("<td>").text(response.result.restaurant_phone),
+							$("<td>").text(response.result.cuisines),
+							$("<td>").text(response.result.address.formatted),
+						);
+						$(".resturantsbody").append(newRow);
+					});
+				};
+			});
+		});
+	});
+			// end document ready
+});
+>>>>>>> Stashed changes
