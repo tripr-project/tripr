@@ -8,7 +8,7 @@
 
 $(document).ready(function () {
 	$(".carousel").hide();
-	$(".restaurant-display").hide();
+	$(".card").hide();
 
 	
 
@@ -19,6 +19,7 @@ $(document).ready(function () {
 		console.log(cityInput)
 		$("#city").val("");
 		$(".carousel").show();
+		$(".card").show();
 
 
 		var slider = $('.carousel');
@@ -77,12 +78,28 @@ $(document).ready(function () {
 					"x-rapidapi-key": "11785c8b2cmsh47e75714bae08e2p11d46djsna87e52066cf6"
 				}
 			}
+			
 
 
 			$.ajax(settings2).done(function (response) {
-				console.log(response.result[0]);
-				$(".hotel-display").empty();
-				$(".hotel-display").append(response.result[0].hotel_name);
+				$(".hotelsbody").empty()
+				// console.log(response.result[0]);
+				// $(".hotel-display").empty();
+				// $(".hotel-display").append(response.result[0].hotel_name);
+				for (var i = 0 ; i < 5; i++) {
+					var newRow = $("<tr>").append(
+						$("<td>").text(response.result[i].hotel_name),
+						console.log(response.result[i].hotel_name),
+						$("<td>").text(response.result[i].min_total_price),
+						console.log(response.result[i].min_total_price),
+						$("<td>").text(response.result[i].address),
+						console.log(response.result[i].address),
+						$("<td>").text(response.result[i].review_score),
+						console.log(response.result[i].review_score),
+					);
+					$(".hotelsbody").append(newRow);
+				}
+
 
 				// searches for restaurant IDs given the lon/lat from city input
 				var ids = {
@@ -96,67 +113,68 @@ $(document).ready(function () {
 					}
 				}
 
+
 				$.ajax(ids).done(function (response) {
 					// restaurant_ids are provided in an object. required to search for restaurants around the location
 					console.log(response.result.data.restaurant_ids);
 
 					// for (var i = 0; i < response.result.data.restaurant_ids.length; i++){
-					for (var i = 0; i < 5; i++) {
-						var loopId = response.result.data.restaurant_ids[i]
-						console.log(loopId)
+					// for (var i = 0; i < 5; i++) {
+					// 	var loopId = response.result.data.restaurant_ids[i]
+					// 	console.log(loopId)
 
-						var restaurants = {
-							"async": true,
-							"crossDomain": true,
-							// replace restaurant ID at end of URL with restaurant ID. for loop to cycle through the array of restaurants?
-							"url": "https://us-restaurant-menus.p.rapidapi.com/restaurant/" + loopId,
-							// response.result.data.restaurant_ids
-							"method": "GET",
-							"headers": {
-								"x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
-								"x-rapidapi-key": "11785c8b2cmsh47e75714bae08e2p11d46djsna87e52066cf6"
-							}
-						}
+						// var restaurants = {
+						// 	"async": true,
+						// 	"crossDomain": true,
+						// 	// replace restaurant ID at end of URL with restaurant ID. for loop to cycle through the array of restaurants?
+						// 	"url": "https://us-restaurant-menus.p.rapidapi.com/restaurant/" + loopId,
+						// 	// response.result.data.restaurant_ids
+						// 	"method": "GET",
+						// 	"headers": {
+						// 		"x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
+						// 		"x-rapidapi-key": "11785c8b2cmsh47e75714bae08e2p11d46djsna87e52066cf6"
+						// 	}
+						// }
 
-						$.ajax(restaurants).done(function (response) {
-							// console.log(response.result)
-							console.log("restaurant name: " + response.result.restaurant_name);
-							console.log("restaurant name: " + response.result.address.formatted);
-							console.log("restaurant name: " + response.result.cuisines);
-							console.log("restaurant name: " + response.result.restaurant_phone);
+						// $.ajax(restaurants).done(function (response) {
+						// 	// console.log(response.result)
+						// 	console.log("restaurant name: " + response.result.restaurant_name);
+						// 	console.log("restaurant name: " + response.result.address.formatted);
+						// 	console.log("restaurant name: " + response.result.cuisines);
+						// 	console.log("restaurant name: " + response.result.restaurant_phone);
 
-							var newRow = $("<tr>").append(
-								$("<td>").text(response.result.restaurant_name),
-								$("<td>").text(response.result.restaurant_phone),
-								$("<td>").text(response.result.cuisines),
-								$("<td>").text(response.result.address.formatted),
-							);
-							$("#restaurant-table > tbody").append(newRow);
+						// 	var newRow = $("<tr>").append(
+						// 		$("<td>").text(response.result.restaurant_name),
+						// 		$("<td>").text(response.result.restaurant_phone),
+						// 		$("<td>").text(response.result.cuisines),
+						// 		$("<td>").text(response.result.address.formatted),
+						// 	);
+						// 	$("#restaurant-table > tbody").append(newRow);
 
-							// grab more info - phone number, address, cuisines, etc...
-						});
-					}
-					// push responses into a table 
-					var restaurants = {
-						"async": true,
-						"crossDomain": true,
-						// replace restaurant ID at end of URL with restaurant ID. for loop to cycle through the array of restaurants?
-						"url": "https://us-restaurant-menus.p.rapidapi.com/restaurant/134949",
-						// response.result.data.restaurant_ids
-						"method": "GET",
-						"headers": {
-							"x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
-							"x-rapidapi-key": "11785c8b2cmsh47e75714bae08e2p11d46djsna87e52066cf6"
-						}
-					}
+						// 	// grab more info - phone number, address, cuisines, etc...
+						// });
+					// }
+					// // push responses into a table 
+					// var restaurants = {
+					// 	"async": true,
+					// 	"crossDomain": true,
+					// 	// replace restaurant ID at end of URL with restaurant ID. for loop to cycle through the array of restaurants?
+					// 	"url": "https://us-restaurant-menus.p.rapidapi.com/restaurant/134949",
+					// 	// response.result.data.restaurant_ids
+					// 	"method": "GET",
+					// 	"headers": {
+					// 		"x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
+					// 		"x-rapidapi-key": "11785c8b2cmsh47e75714bae08e2p11d46djsna87e52066cf6"
+					// 	}
+					// }
 
-					$.ajax(restaurants).done(function (response) {
-						console.log("restaurant name: " + response.result.restaurant_name);
-						$(".restaurant-display").append(response.result.restaurant_name);
-						// where is optimal place to put this? 
-						$(".restaurant-display").show();
+					// $.ajax(restaurants).done(function (response) {
+					// 	console.log("restaurant name: " + response.result.restaurant_name);
+					// 	$(".restaurant-display").append(response.result.restaurant_name);
+					// 	// where is optimal place to put this? 
+					// 	$(".restaurant-display").show();
 
-					});
+					// });
 				}
 				);
 			});
