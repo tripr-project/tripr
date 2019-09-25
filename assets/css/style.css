@@ -1,0 +1,89 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-image:url(../images/restaurant.jpg)
+  }
+h1, h2, h6{
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+}
+
+#logo{
+    text-align: center;
+    color: white;
+    font-size: 45px;
+    font-weight: bolder;
+    text-shadow: 4px 4px red;
+}
+#logo-img{
+    height: 40px;
+    weight: 50px
+}
+#header-content{
+    font-weight: bolder;
+}
+.section-search input {
+    padding: 5px !important;
+    font-size: 18px !important;
+    width: 90% !important;
+    border: #f4f4f4 3px solid !important;
+}
+.grey-text{
+    text-align: center;
+}
+#search {
+    position: relative
+}
+
+footer {
+    background-color: palevioletred;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+}
+main {
+    flex: 1 0 auto;
+}
+
+/* .nav-wrapper{
+    text-align: center;
+}
+.col{
+    text-align: center;
+    margin-left: 200px;
+} */
+
+
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+
+  td {
+      margin-right: 2px;
+      border-right: grey 2px solid;
+  }
+
+  .hotel-link {
+      color: blue !important;
+      text-transform: capitalize !important;
+  }
+
+  .waves-effect {
+      z-index: 0;
+  }
