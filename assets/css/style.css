@@ -37,7 +37,10 @@ h1, h2, h6{
     text-align: center;
 }
 footer {
-    background-color: palevioletred
+    background-color: palevioletred;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
 }
 main {
     flex: 1 0 auto;
