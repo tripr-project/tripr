@@ -10,14 +10,10 @@
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
-
- 
   <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-  <!-- JQuery Link-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <title>Tripr</title>
 
@@ -30,14 +26,6 @@
     <li class="divider"></li>
     <li><a href="#!">three</a></li>
   </ul>
-  <!-- <nav>
-    <div class="nav-wrapper">
-
-      <a href="#" class="brand-logo" id="logo">Tripr</a>
-
-      <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html"></a></li>
-        <li><a href="badges.html"></a></li> -->
   <nav class="nav-wrapper transparent">
     <div class="container">
       <a id="logo" href="" class="brand-logo">
@@ -63,16 +51,6 @@
     </div>
   </nav>
 
-  <!-- my custom content -->
-  <!-- <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo" id="logo">Tripr</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="badges.html"></a></li>
-    </div>
-  </nav> -->
-  <!-- end custom content -->
-
   <div class="container">
 
     <h1>Welcome to Tripr!</h1>
@@ -81,284 +59,127 @@
       Please take a look through our site and find amazing matches. </h6>
     <!--  images of restaurants and cities -->
     <div class="carousel" id="pictures">
-
       <a class="carousel-item" href="#one!"><img
           src="https://cdn.vox-cdn.com/thumbor/MvaCwyEYxLTa0GAgriwFRmqpx04=/0x0:780x582/1200x800/filters:focal(403x204:527x328)/cdn.vox-cdn.com/uploads/chorus_image/image/55747759/1240_vista_tower_skyline_night_courtesy_of_magellan_development_group.0.jpg"></a>
     </div>
 
-
-    <!-- <div class="content-body"> -->
-    <!-- snehal work here -->
-
-    <!-- start extra form -->
-    <!-- <form class="col s1.5">
-      <div class="row">
-        <h6>PickUp Date:</h6>
-        <input type="date" class="datepicker">
-        <div class="row">
-
-            <div class="input-field col s3">
- <label for="city">City:</label>
-                <input id="city" type="text" class="validate">  
-            </div>
-            <div class="input-field col s3">
-              <label for="date">Pickup Date:</label>
-                             <input type="text" class="pickup">  
-                         </div>
-                         <div class="input-field col s3">
-                            <label for="date">Dropoff Date:</label>
-                                           <input type="text" class="dropoff">  
-                                       </div>
-            <div class="input-field col s3">
-                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                </button>
-            </div>
-
-        </div>
-
-
-    </form> -->
-    <!-- end extra form -->
-
-    <!-- <div class="row">
-     <form class="col s6">
-      <div class="row">
-        <div class="input-field col s6">
-          <label for="city">City:</label>
-          <input id="city" type="text" class="validate">
-          <button class="btn waves-effect waves-light submit-city" type="submit" name="action">Submit
-          </button>
-        </div>
-      </div>
-    </form>
-  </div> -->
-
-<!-- card to put the information inside -->
-    <!-- <div class="row">
-      <div class="col s12 m12">
+    <div class="row">
+      <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
-            <span class="card-title">Search</span>
-
-            <div class="row">
-              <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s4">
-                        <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                        <label for="first_name"></label>
-                      </div>
-                  <div class="input-field col s4">
-                    <input id="checkin" type="text" class="validate">
-                    <label for="check_in_date">CheckIn Date</label>
-                  </div>
-                  <div class="input-field col s4">
-                    <input id="checkout" type="text" class="validate">
-                    <label for="check_out_date">Checkout Date</label>
+            <span class="card-title">Card Title</span>
+            <div id="hotel-display center">
+              <div class="row">
+                <div class="col md-6">
+                  <div class="card light-blue lighten-5">
+                    <div class="card-content black-text">
+                      <span class="card-title">Hotel Preview</span>
+                    </div>
+                    <div class="card-action">
+                      <table class="table table-sm table-hover centered striped" id='hotel-table'>
+                        <thead>
+                          <tr>
+                            <th scope="col">Hotel Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Rating</th>
+                          </tr>
+                        </thead>
+                        <tbody class="hotelsbody">
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
-              </form>
-              <div class="card-action">
-                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                  <i class="material-icons right">send</i>
-                </button>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div> -->
-
-    <div class="row">
-        <form class="col s12">
-          <div class="row">
-              <div class="input-field col s4">
-                  <input placeholder="Chicago" id="city" type="text" class="validate">
-                  <label for="city_name">Enter your destination!</label>
-                </div>
-            <div class="input-field col s4">
-              <!-- input only works if its year-month-day -->
-              <input id="arrival" placeholder="2019-03-13" type="text" class="validate">
-              <label for="arrival_date">Arrival Date</label>
-            </div>
-            <div class="input-field col s4">
-              <input id="departure" placeholder="2019-03-19" type="text" class="validate">
-              <label for="departure_date">Departure Date</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s4">
-                <input placeholder="4" id="guests" type="text" class="validate">
-                <label for="guest_count">Number of adults</label>
-            </div>
-            <div class="input-field col s4">
-                <input placeholder="1" id="rooms" type="text" class="validate">
-                <label for="room_count">Number of rooms</label>
-            </div>
-          </div>
-        </form>
-        <div class="card-action">
-          <button class="btn waves-effect waves-light submit-button" type="submit" name="action">Submit
-            <i class="material-icons right">send</i>
-          </button>
-        </div>
-      </div>
-
-
-    <!--hotel suggestions slide bar goes here-->
-    <!-- <div>
-    please tell us what this does or is supposed to be
-
-  </div> -->
-
-
-
-
-    <!-- <div class="car-request">
-    </div> -->
-
-
-    <!-- <div class="content-body">
-    
-    <br>
-    <h2 id="preview"> A preview of your trip to <span id="destination">:<span> </h6>
-          <!--  images of restaurants and cities -->
-          <div class="carousel" id="pictures">
-
-            <a class="carousel-item" href="#one!"><img
-                src="https://cdn.vox-cdn.com/thumbor/MvaCwyEYxLTa0GAgriwFRmqpx04=/0x0:780x582/1200x800/filters:focal(403x204:527x328)/cdn.vox-cdn.com/uploads/chorus_image/image/55747759/1240_vista_tower_skyline_night_courtesy_of_magellan_development_group.0.jpg"></a>
-          </div>
-
-    <div class="restaurant-display center">
-      <div class="row">
-        <div class="col s12 m6">
-          <div class="card light-blue lighten-5">
-            <div class="card-content black-text">
-              <span class="card-title">Card Title</span>
-              <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <table class="table table-sm table-hover" id='restaurant-table'>
-                <thead>
-                  <tr>
-                    <th scope="col">Restaurant Name</th>
-                    <th scope="col">Phone Number</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Cuisines</th>
-                  </tr>
-                </thead>
-                <tbody>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <!-- replace this information with hotel information -->
-        <!-- <div class="col s12 m6">
-            <div class="card light-blue lighten-5">
-              <div class="card-content black-text">
-                <span class="card-title">Card Title</span>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
-              </div>
-              <div class="card-action">
-                  <table class="table table-sm table-hover" id='restaurant-table'>
-          <div id="restaurant-display center">
-            <div class="row">
-              <div class="col md-6">
-                <div class="card light-blue lighten-5">
-                  <div class="card-content black-text">
-                    <span class="card-title">Hotel Preview</span>
-                  </div>
-                  <div class="card-action">
-                    <table class="table table-sm table-hover" id='resturant-table'>
-                      <thead>
-                        <tr>
-                          <th scope="col">Hotel Name</th>
-                          <th scope="col">Price</th>
-                          <th scope="col">Rating</th>
-                          <th scope="col">Address</th>
-                        </tr>
-                      </thead>
-                      <tbody class="hotelsbody">
-
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <!-- replace this information with hotel information -->
-              <div class="col md-6">
-                <div class="card light-blue lighten-5">
-                  <div class="card-content black-text">
-                    <span class="card-title">Restaurant</span>
-                    <!-- <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p> -->
-                  </div>
-                  <div class="card-action">
-                    <table class="table table-sm table-hover" id='hotel-table'>
-                      <thead>
-                        <tr>
-                          <th scope="col">Hotel Name</th>
-                          <th scope="col">Phone Number</th>
-                          <th scope="col">Address</th>
-                          <th scope="col">Price</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
       </div>
     </div>
-  </div>
 
-
-          </div>
-
-          <div class="row">
-            <div class="col s6">
-              <h6 id="changecity"> Not feeling it? Try somewhere else</h6>
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title">Card Title</span>
+            <div id="restaurant-display center">
+              <div class="row">
+                <div class="col md-6">
+                  <div class="col md-6">
+                    <div class="card light-blue lighten-5">
+                      <div class="card-content black-text">
+                        <span class="card-title">Restaurant</span>
+                      </div>
+                      <div class="card-action">
+                        <table class="table table-sm table-hover centered striped" id='restaurants-table'>
+                          <thead>
+                            <tr>
+                              <th scope="col">Restaurant Name</th>
+                              <th scope="col">Phone Number</th>
+                              <th scope="col">Cuisine</th>
+                              <th scope="col">Address</th>
+                            </tr>
+                          </thead>
+                          <tbody class="restaurantsbody">
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div class="row">
-            <form class="col s12">
-              <div class="row">
-                <div class="input-field col s3">
-                  <label for="city">City:</label>
-                  <input id="city" type="text" class="validate">
-                </div>
-                <div class="input-field col s3">
-                  <label for="arrival_date">Arrival Date: 2019-10-03</label>
-                  <input id="arrival" type="text" class="validate">
-                </div>
-                <div class="input-field col s3">
-                  <label for="departure_date">Arrival Date: 2019-10-15</label>
-                  <input id="departure" type="text" class="validate">
-                </div>
-                <button class="btn waves-effect waves-light submit-city" type="submit" name="action">Submit</button>
-              </div>
-          </div>
-          <!-- container end -->
-  </div>
-  <!--footer goes here-->
-  <footer class="page-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Thanks for visiting!</h5>
-          <p class="grey-text text-lighten-4"></p>
         </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text"></h5>
-          <ul>
-  
-            <div class="col s9">
+      </div>
+
+
+      <div class="row">
+        <div class="col s6">
+          <h6 id="changecity"> Not feeling it? Try somewhere else</h6>
+        </div>
+      </div>
+
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s3">
+              <label for="city">City:</label>
+              <input id="city" type="text" class="validate">
+            </div>
+            <div class="input-field col s3">
+              <label for="arrival_date">Arrival Date: 2019-10-03</label>
+              <input id="arrival" type="date" class="validate">
+            </div>
+            <div class="input-field col s3">
+              <label for="departure_date">Departure Date: 2019-10-15</label>
+              <input id="departure" type="date" class="validate">
+            </div>
+            <button class="btn waves-effect waves-light submit-city" type="submit" name="action">Submit</button>
+          </div>
+      </div>
+      <!-- container end -->
+    </div>
+    <!--footer goes here-->
+    </div>
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col s9">
+            <h5>About Me</h5>
+            <p>Add some texutal content for describing about your company.organization or website. Add
+              some texutal
+              content for describing about your company.organization or website. Add some texutal content
+              for describing
+              about your company.organization or website.</p>
+          </div>
+
+          <div class="col s3 ">
+            <h5>Connect</h5>
+            <ul>
+
+              <!-- <div class="col s9">
               <h5>About Me</h5>
               <p>Add some texutal content for describing about your company.organization or website. Add some texutal
                 content for describing about your company.organization or website. Add some texutal content for describing
@@ -389,12 +210,36 @@
           <a class="grey-text text-lighten-4 right" href="#!"></a>
         </div>
       </div>
-  </footer>
+  </footer> -->
+              <li><a href="https://www.facebook.com" target="_blank"
+                  class="waves-effect waves-light btn-floating social facebook">
+                  <i class="fa fa-facebook"></i></a>
+                <a href="https://www.twitter.com" target="_blank"
+                  class="waves-effect waves-light btn-floating social twitter">
+                  <i class="fa fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank"
+                  class="waves-effect waves-light btn-floating social instagram">
+                  <i class="fa fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank"
+                  class="waves-effect waves-light btn-floating social linkedin">
+                  <i class="fa fa-linkedin"></i></a></li>
+            </ul>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="assets/javascript/logic.js"></script>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright grey darken-4">
+        <div class="container center-align">&copy; 2019 Tripr</div>
+      </div>
+    </footer>
 
-  <!-- <script>
+
+    <!-- JQuery Link-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="assets/javascript/logic.js"></script>
+
+    <!-- <script>
     var pickupDate = document.querySelector(".pickup");
     M.Datepicker.init(pickupDate,{});
     <div class="footer-copyright grey darken-4">
@@ -404,10 +249,10 @@
 
 
   </script> -->
-  <!-- JQuery Link-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="assets/javascript/logic.js"></script>
+    <!-- JQuery Link-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="assets/javascript/logic.js"></script>
 
 
 </body>
