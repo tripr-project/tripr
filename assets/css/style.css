@@ -37,7 +37,10 @@ h1, h2, h6{
     text-align: center;
 }
 footer {
-    background-color: palevioletred
+    background-color: palevioletred;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
 }
 main {
     flex: 1 0 auto;
@@ -45,13 +48,14 @@ main {
 #footer{
     text-align: center;
 }
-/* .nav-wrapper{
+.nav-wrapper{
     text-align: center;
 }
 .col{
     text-align: center;
     margin-left: 200px;
-} */
+}
+
 
 .card{
     text-align: center;
@@ -72,4 +76,9 @@ main {
   .fa-linkedin {
     background: #007bb5;
     color: white;
+  }
+
+  td {
+      margin-right: 2px;
+      border-right: grey 2px solid;
   }

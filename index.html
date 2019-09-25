@@ -5,15 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
-  
+
+
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- Compiled and minified JavaScript -->
-  
+
 
   <title>Tripr</title>
 
@@ -27,31 +27,34 @@
     <li class="divider"></li>
     <li><a href="#!">three</a></li>
   </ul>
+
+
   <nav class="nav-wrapper transparent">
     <div class="container">
       <a id="logo" href="" class="brand-logo">
         Tripr
-      <img id="logo-img" src="./assets/images/logo.jpg" alt="">
+        <img id="logo-img" src="./assets/images/logo.jpg" alt="">
       </a>
       <a href="" class="sidenav-trigger" data-target="mobile-menu">
         <i class="material-icons">menu</i>
       </a>
       <ul id="header-content" class="right hide-on-med-and-down">
-        <li><a href="#aboutme">About Us</a></li>
-        <li><a href="#">Serivces</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
         <li><a href="#">Connect</a></li>
         <li><a href="#">Contact Us</a></li>
       </ul>
       <ul class="sidenav grey lighten-2" id="mobile-menu">
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Serivces</a></li>
-          <li><a href="#">Connect</a></li>
-          <li><a href="#">Contact Us</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Connect</a></li>
+        <li><a href="#">Contact Us</a></li>
+
 
       </ul>
     </div>
   </nav>
-  
+
 
   <!-- my custom content -->
   <!-- <nav>
@@ -70,21 +73,20 @@
 
     <h6>Here at Tripr, we want to make your travel experience as easy as possible.<br>
       Please take a look through our site and find amazing matches. </h6>
-      <br>
+    <br>
     <h2 id="preview"> A preview of your trip to <span id="destination">:<span> </h6>
-    <!--  images of restaurants and cities -->
-    <div class="carousel" id="pictures">
+          <!--  images of restaurants and cities -->
+          <div class="carousel" id="pictures">
 
-      <a class="carousel-item" href="#one!"><img
-          src="https://cdn.vox-cdn.com/thumbor/MvaCwyEYxLTa0GAgriwFRmqpx04=/0x0:780x582/1200x800/filters:focal(403x204:527x328)/cdn.vox-cdn.com/uploads/chorus_image/image/55747759/1240_vista_tower_skyline_night_courtesy_of_magellan_development_group.0.jpg"></a>
-    </div>
+            <a class="carousel-item" href="#one!"><img></a>
+          </div>
 
 
-    <!-- <div class="content-body"> -->
-    <!-- snehal work here -->
+          <!-- <div class="content-body"> -->
+          <!-- snehal work here -->
 
-    <!-- start extra form -->
-    <!-- <form class="col s1.5">
+          <!-- start extra form -->
+          <!-- <form class="col s1.5">
       <div class="row">
         <h6>PickUp Date:</h6>
         <input type="date" class="datepicker">
@@ -111,33 +113,40 @@
 
 
     </form> -->
-    <!-- end extra form -->
-
-
-    <!--hotel suggestions slide bar goes here-->
-    <!-- <div>
-    please tell us what this does or is supposed to be
-
-  </div> -->
+          <!-- end extra form -->
 
 
 
 
-    <!-- <div class="car-request">
-    </div> -->
 
-  <h6>Here at Tripr, we want to make your travel experience as easy as possible.<br>
-    Please take a look through our site and find amazing matches. </h6>
-    <br>
-    <br>
+          <br>
+          <br>
 
-
-
-
-    <!-- <div class="content-body">
+          <!-- <div class="content-body">
     
 
     </div> -->
+
+          <div id="restaurant-display center">
+            <div class="row">
+              <div class="col md-6">
+                <div class="card light-blue lighten-5">
+                  <div class="card-content black-text">
+                    <span class="card-title">Hotel Preview</span>
+
+                  </div>
+                  <div class="card-action">
+                    <table class="table table-sm table-hover centered striped" id='resturant-table'>
+                      <thead>
+                        <tr>
+                          <th scope="col">Hotel Name</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Review</th>
+                          <th scope="col">Address</th>
+
+                        </tr>
+                      </thead>
+                      <tbody class="hotelsbody">
 
     <div id="restaurant-display center">
       <div class="row">
@@ -174,6 +183,19 @@
               </div>
               <div class="card-action">
                   <table class="table table-sm table-hover" id='restaurant-table'>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col md-6">
+                <div class="card light-blue lighten-5">
+                  <div class="card-content black-text">
+                    <span class="card-title">Restaurant</span>
+                  </div>
+                  <div class="card-action">
+                    <table class="table table-sm table-hover centered striped" id='hotel-table'>
                       <thead>
                         <tr>
                           <th scope="col">Hotel Name</th>
@@ -185,71 +207,80 @@
                       <tbody>
                       </tbody>
                     </table>
+                  </div>
+                </div>
               </div>
             </div>
           </div> -->
       </div>
     </div>
-
-    <div class="row">
-      <div class = "col s6"> 
-        <h6 id="changecity"> Not feeling it? Try somewhere else</h6>
-      </div>
-    </div>
-    
-    <div class="row">
-      <form class="col s6">
-        <div class="row">
-          <div class="col s3"> 
-              
-          </div>
-          <div class="input-field col s6">
-            
-            <label for="city">City:</label>
-            <input id="city" type="text" class="validate">
-            <button class="btn waves-effect waves-light submit-city" type="submit" name="action">Submit
-            </button>
           </div>
 
-        </div>
-    </div>
-    <!-- container end -->
+          <div class="row">
+            <div class="col s6">
+              <h6 id="changecity"> Not feeling it? Try somewhere else</h6>
+            </div>
+          </div>
+
+          <div class="row">
+            <form class="col s6">
+              <div class="row">
+                <div class="col s3">
+
+                </div>
+                <div class="input-field col s6">
+
+                  <label for="city">City:</label>
+                  <input id="city" type="text" class="validate">
+                  <button class="btn waves-effect waves-light submit-city" type="submit" name="action">Submit
+                  </button>
+                </div>
+
+              </div>
+          </div>
+          <!-- container end -->
   </div>
   <!--footer goes here-->
- <footer class="page-footer">
+  <footer class="page-footer">
     <div class="container">
       <div class="row">
         <div class="col s9">
-          <h5 id="aboutme">About Me</h5>
-          <p>Add some texutal content for describing about your company.organization or website. Add some texutal content for describing about your company.organization or website. Add some texutal content for describing about your company.organization or website.</p>
+
+          <h5>Thank you for visiting!</h5>
+          <p></p>
+
         </div>
-  
+
         <div class="col s3 ">
           <h5>Connect</h5>
           <ul>
-            <li><a href="https://www.facebook.com" target="_blank" class="waves-effect waves-light btn-floating social facebook">
+            <li><a href="https://www.facebook.com" target="_blank"
+                class="waves-effect waves-light btn-floating social facebook">
                 <i class="fa fa-facebook"></i></a>
-            <a href="https://www.twitter.com" target="_blank" class="waves-effect waves-light btn-floating social twitter">
+              <a href="https://www.twitter.com" target="_blank"
+                class="waves-effect waves-light btn-floating social twitter">
                 <i class="fa fa-twitter"></i></a>
-            <a href="https://www.instagram.com" target="_blank" class="waves-effect waves-light btn-floating social instagram">
+              <a href="https://www.instagram.com" target="_blank"
+                class="waves-effect waves-light btn-floating social instagram">
                 <i class="fa fa-instagram"></i></a>
-            <a href="https://www.linkedin.com" target="_blank" class="waves-effect waves-light btn-floating social linkedin">
+              <a href="https://www.linkedin.com" target="_blank"
+                class="waves-effect waves-light btn-floating social linkedin">
                 <i class="fa fa-linkedin"></i></a></li>
           </ul>
-  
-        </div>
-        </div>
-    </div>      
-  <div class="footer-copyright grey darken-4">
-  <div class="container center-align">&copy; 2019 Tripr</div>
-  </div>
-  </footer> 
-  
 
-<!-- JQuery Link-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="assets/javascript/logic.js"></script>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright grey darken-4">
+      <div class="container center-align">&copy; 2019 Tripr</div>
+    </div>
+  </footer>
+
+
+  <!-- JQuery Link-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="assets/javascript/logic.js"></script>
 
   <!-- <script>
     var pickupDate = document.querySelector(".pickup");
@@ -260,9 +291,9 @@
 
   </script> -->
   <script>
-  $(document).ready(function(){
-    $(".sidenav").sidenav();
-  });
+    $(document).ready(function () {
+      $(".sidenav").sidenav();
+    });
   </script>
 
 
