@@ -8,10 +8,6 @@ h1, h2, h6{
     text-align: center;
     font-family: 'Roboto Mono', monospace;
 }
-/* h6 {
-    text-align: center;
-    font-family: 'Roboto Mono', monospace;
-} */
 
 #logo{
     text-align: center;
@@ -36,30 +32,30 @@ h1, h2, h6{
 .grey-text{
     text-align: center;
 }
+#search {
+    position: relative
+}
+
 footer {
     background-color: palevioletred;
-    position: fixed;
+    position: relative;
     bottom: 0px;
     width: 100%;
+    text-align: center;
 }
 main {
     flex: 1 0 auto;
 }
-#footer{
-    text-align: center;
-}
-.nav-wrapper{
+
+/* .nav-wrapper{
     text-align: center;
 }
 .col{
     text-align: center;
     margin-left: 200px;
-}
+} */
 
 
-.card{
-    text-align: center;
-}
 
 .fa-facebook {
   background: #3B5998;
@@ -81,4 +77,13 @@ main {
   td {
       margin-right: 2px;
       border-right: grey 2px solid;
+  }
+
+  .hotel-link {
+      color: blue !important;
+      text-transform: capitalize !important;
+  }
+
+  .waves-effect {
+      z-index: 0;
   }

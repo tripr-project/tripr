@@ -27,8 +27,6 @@
     <li class="divider"></li>
     <li><a href="#!">three</a></li>
   </ul>
-
-
   <nav class="nav-wrapper transparent">
     <div class="container">
       <a id="logo" href="" class="brand-logo">
@@ -49,7 +47,6 @@
         <li><a href="#">Services</a></li>
         <li><a href="#">Connect</a></li>
         <li><a href="#">Contact Us</a></li>
-
 
       </ul>
     </div>
@@ -116,11 +113,9 @@
           <!-- end extra form -->
 
 
-
-
-
           <br>
           <br>
+
 
           <!-- <div class="content-body">
     
@@ -215,27 +210,21 @@
       </div>
     </div>
           </div>
-
           <div class="row">
-            <div class="col s6">
-              <h6 id="changecity"> Not feeling it? Try somewhere else</h6>
-            </div>
-          </div>
-
-          <div class="row">
-            <form class="col s6">
+            <form class="col s12">
               <div class="row">
-                <div class="col s3">
 
+                  <h6 id="changecity"> Not feeling it? Try somewhere else</h6>
+                <div class="input-field col s3">
+                  <input id="city" type="text"  placeholder="City"  class="test">
                 </div>
-                <div class="input-field col s6">
-
-                  <label for="city">City:</label>
-                  <input id="city" type="text" class="validate">
-                  <button class="btn waves-effect waves-light submit-city" type="submit" name="action">Submit
-                  </button>
+                <div class="input-field col s3">
+                  <input id="arrival" type="text" placeholder="Start Date" class="datepicker">
                 </div>
-
+                <div class="input-field col s3">
+                  <input id="departure" type="text" placeholder="End Date" class="datepicker">
+                </div>
+                <button class="btn waves-effect waves-light submit-city" type="submit" name="action">Submit</button>
               </div>
           </div>
           <!-- container end -->
@@ -245,10 +234,8 @@
     <div class="container">
       <div class="row">
         <div class="col s9">
-
-          <h5>Thank you for visiting!</h5>
-          <p></p>
-
+          <h5>About Me</h5>
+          <p>We study full stack development! Enjoy our website.</p>
         </div>
 
         <div class="col s3 ">
@@ -279,6 +266,7 @@
 
   <!-- JQuery Link-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="assets/javascript/logic.js"></script>
 
