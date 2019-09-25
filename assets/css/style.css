@@ -73,3 +73,8 @@ main {
     background: #007bb5;
     color: white;
   }
+
+  td {
+      margin-right: 2px;
+      border-right: grey 2px solid;
+  }
