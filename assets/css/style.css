@@ -12,6 +12,21 @@ h1, h2, h6{
     text-align: center;
     font-family: 'Roboto Mono', monospace;
 } */
+
+#logo{
+    text-align: center;
+    color: white;
+    font-size: 45px;
+    font-weight: bolder;
+    text-shadow: 4px 4px red;
+}
+#logo-img{
+    height: 40px;
+    weight: 50px
+}
+#header-content{
+    font-weight: bolder;
+}
 .section-search input {
     padding: 5px !important;
     font-size: 18px !important;
