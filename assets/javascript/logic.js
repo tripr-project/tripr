@@ -18,7 +18,6 @@ $(document).ready(function () {
 	$(".submit-city").on("click", function (event) {
 		event.preventDefault();
 		cityInput = $("#city").val().trim();
-		console.log(cityInput)
 		$("#city").val("");
 		$(".carousel").show();
 		$(".card").show();
@@ -47,7 +46,6 @@ $(document).ready(function () {
 					slider.removeClass('initialized')
 				}
 				slider.carousel();
-				console.log(response.data[i].images[0].link);
 			}
 			slider.carousel
 		});
@@ -67,11 +65,9 @@ $(document).ready(function () {
 			}
 		}
 		$.ajax(settings).done(function (response) {
-			console.log(response[0]);
 			bookingcitycode = response[0].dest_id;
 			restlat = response[0].latitude;
 			restlong = response[0].longitude;
-			console.log(restlat + "," + restlong)
 
 
 			var settings2 = {
@@ -91,20 +87,16 @@ $(document).ready(function () {
 				// console.log(response.result[0]);
 				// $(".hotel-display").empty();
 				// $(".hotel-display").append(response.result[0].hotel_name);
-				console.log(response);
 				for (var i = 0; i < 6; i++) {
 					if (i == 2) {
 						console.log("skip")
 					} else {
 						var newRow = $("<tr>").append(
 							$("<td>").text(response.result[i].hotel_name),
-							console.log(response.result[i].hotel_name),
 							$("<td>").text(response.result[i].min_total_price),
-							console.log(response.result[i].min_total_price),
-							$("<td>").text(response.result[i].address),
-							console.log(response.result[i].address),
 							$("<td>").text(response.result[i].review_score),
-							console.log(response.result[i].review_score),
+							$("<td>").text(response.result[i].address),
+	
 						);
 						$(".hotelsbody").append(newRow);
 					}
@@ -130,11 +122,9 @@ $(document).ready(function () {
 			}
 		}
 		$.ajax(settingsagain).done(function (response) {
-			console.log(response[0]);
 			bookingcitycode = response[0].dest_id;
 			restlat = response[0].latitude;
 			restlong = response[0].longitude;
-			console.log(restlat + "," + restlong)
 
 
 			var ids = {
@@ -150,11 +140,9 @@ $(document).ready(function () {
 
 			$.ajax(ids).done(function (response) {
 				// restaurant_ids are provided in an object. required to search for restaurants around the location
-				console.log(response);
 				$(".resturantsbody").empty();
 				for (var i = 0; i < 5; i++) {
 					var loopId = response.result.data.restaurant_ids[i]
-					console.log(loopId)
 
 					var restaurants = {
 						"async": true,
@@ -170,12 +158,6 @@ $(document).ready(function () {
 					}
 
 					$.ajax(restaurants).done(function (response) {
-
-						// console.log(response.result)
-						console.log("restaurant name: " + response.result.restaurant_name);
-						console.log("restaurant name: " + response.result.address.formatted);
-						console.log("restaurant name: " + response.result.cuisines);
-						console.log("restaurant name: " + response.result.restaurant_phone);
 
 						var newRow = $("<tr>").append(
 							$("<td>").text(response.result.restaurant_name),
