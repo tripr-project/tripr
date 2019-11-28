@@ -13,7 +13,7 @@ A Screenshots of website after entering "New York City"
 
 The images displayed:
 
-![Images](./screenshots/Images.jpg)
+![Images](./screenshots/Photos.jpg)
 
 The table of restaurants displayed:
 
